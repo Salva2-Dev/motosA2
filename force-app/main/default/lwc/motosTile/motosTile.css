@@ -1,0 +1,16 @@
+:host{
+    max-width: 325px;
+    display: block;
+}
+
+p{
+    min-height: 60px;
+}
+img{
+    height: 200px;
+    border-radius: var(--lwc-spacingLarge, 1.5rem);
+}
+
+.align-rigth{
+    float: right;
+}

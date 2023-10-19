@@ -1,0 +1,14 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card  title= {moto.Name} icon-name="custom:custom80">
+        <lightning-button label="Ver detalles" slot="actions"></lightning-button>
+        <p  class="slds-var-p-horizontal_xx-large">{moto.Marca__c}</p>
+        <img 
+        class="moto slds-align_absolute-center slds-var-m-arround_medium"
+        src={moto.Imagen__c}
+        alt={moto.Name}
+        />
+        <p  class="slds-var-p-horizontal_xx-large">{moto.Precio__c}</p>
+
+    </lightning-card>
+</template>
