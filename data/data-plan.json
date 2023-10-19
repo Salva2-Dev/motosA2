@@ -1,0 +1,9 @@
+[
+    {
+        "sobject": "Modelo__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": ["Modelo__c.json"]
+
+    }
+]
