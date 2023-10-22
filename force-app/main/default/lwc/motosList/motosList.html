@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-align_absolute-center">
+        <div class="slds-grid slds-wrap slds-grid_align-spread" style="width: 1100px;">
+    <template if:true={motos.data}>
+    <template for:each={motos.data} for:item="mot">
+        <div key={mot.Name}>
+            <c-motos-tile 
+            moto={mot}
+            class="slds-col slds-var-m-around_small"
+            >
+
+            </c-motos-tile>
+        </div>
+      </template>
+    
+    </template>
+</div>
+</div>
+</template>
