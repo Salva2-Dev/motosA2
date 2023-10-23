@@ -9,6 +9,7 @@ p{
 img{
     height: 200px;
     border-radius: var(--lwc-spacingLarge, 1.5rem);
+    margin: 10px;
 }
 
 .align-rigth{
