@@ -1,8 +1,16 @@
 import { LightningElement, api, wire } from 'lwc';
-import getAllMod from '@salesforce/apex/MotoService.getAllModelos';
+import getFilteredModelos from '@salesforce/apex/MotoService.getFilteredModelos';
 
 export default class MotosTile extends LightningElement {
+   searchText = "";
    @api moto;
-   @wire(getAllMod)
+   @wire(getFilteredModelos, {searchText: '$searchText'})
    motos;
+
+   handleInputChange(event){
+const searchTextAux = event.target.value;
+if (searchTextAux.length >=2 || searchTextAux === ""){
+this.searchText = searchTextAux;
+}
+   }
 }
