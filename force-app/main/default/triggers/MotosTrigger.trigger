@@ -1,11 +1,16 @@
 trigger MotosTrigger on Mi_moto__c (before insert, before update) {
+MiMotoTriggerHandler handler = new MiMotoTriggerHandler();
 
-//List<Modelo__c> Modelos =    [SELECT Frecuencia_Revision__c FROM Modelo__c WHERE Id IN :ModeloIds];
 
     if(trigger.isInsert || trigger.isUpdate){
         set<Id> ModeloIds = new Set<Id>();
         for(Mi_moto__c newMi_moto : Trigger.new){
-            Mi_moto__c oldMi_moto = Trigger.oldMap.get(newMi_moto.Id);
+            //Mi_moto__c oldMi_moto = Trigger.oldMap.get(newMi_moto.Id);
+
+            Mi_moto__c oldMi_moto = (Trigger.isUpdate) ? Trigger.oldMap.get(newMi_moto.Id): null;
+
+
+
             if(oldMi_moto == null  ||   (oldMi_moto.Ultima_Revision__c != newMi_Moto.Ultima_Revision__c)){
                 
                 
@@ -22,7 +27,9 @@ trigger MotosTrigger on Mi_moto__c (before insert, before update) {
 
 
         for(Mi_moto__c newMi_moto : Trigger.new){
-            Mi_moto__c oldMi_moto = Trigger.oldMap.get(newMi_moto.Id);
+            //Mi_moto__c oldMi_moto = Trigger.oldMap.get(newMi_moto.Id);
+
+            Mi_moto__c oldMi_moto = (Trigger.isUpdate) ? Trigger.oldMap.get(newMi_moto.Id): null;
             if(oldMi_moto == null  ||   (oldMi_moto.Ultima_Revision__c != newMi_Moto.Ultima_Revision__c)){
                 
                 
