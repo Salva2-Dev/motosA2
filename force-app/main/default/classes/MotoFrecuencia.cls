@@ -11,8 +11,8 @@ public with sharing class MotoFrecuencia {
 
 
 public static Integer getDiasCambioAceite(Modelo__c Modelo) {
-    Integer frecuenciaAceite = Modelo.Frecuencia_Cambio_Aceite__c.intValue();
+    Integer frecuenciaInteger = Modelo.Frecuencia_Cambio_Aceite__c.intValue();
 
-        return frecuenciaAceite;
+        return frecuenciaInteger;
     }
 }
